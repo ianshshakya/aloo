@@ -1,0 +1,16 @@
+[package]
+name         = "aloo-traits"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description  = "Core trait definitions for the Aloo platform"
+
+[dependencies]
+aloo-core   = { workspace = true }
+tokio       = { workspace = true }
+async-trait = { workspace = true }
+thiserror   = { workspace = true }
+serde       = { workspace = true }
+bytes       = { workspace = true }

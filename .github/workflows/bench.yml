@@ -1,0 +1,33 @@
+name: Benchmarks
+
+on:
+  push:
+    branches: [main]
+  # Manual trigger for ad-hoc benchmarking
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  bench:
+    name: Criterion Benchmarks
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Run benchmarks
+        run: cargo bench --workspace
+
+      - name: Upload benchmark results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-results
+          path: target/criterion/

@@ -1,0 +1,15 @@
+[package]
+name         = "aloo-ai"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description  = "AI-assisted scan summarisation for Aloo (stub)"
+
+[dependencies]
+aloo-core  = { workspace = true }
+tokio      = { workspace = true }
+serde      = { workspace = true }
+thiserror  = { workspace = true }
+tracing    = { workspace = true }

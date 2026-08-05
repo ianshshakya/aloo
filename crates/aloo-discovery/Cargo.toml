@@ -1,0 +1,19 @@
+[package]
+name         = "aloo-discovery"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description  = "Host discovery subsystem for Aloo"
+
+[dependencies]
+aloo-core   = { workspace = true }
+aloo-traits = { workspace = true }
+aloo-net    = { workspace = true }
+aloo-dns    = { workspace = true }
+tokio       = { workspace = true }
+async-trait = { workspace = true }
+ipnet       = { workspace = true }
+thiserror   = { workspace = true }
+tracing     = { workspace = true }

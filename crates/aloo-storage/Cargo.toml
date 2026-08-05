@@ -1,0 +1,17 @@
+[package]
+name         = "aloo-storage"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description  = "SQLite-backed persistence for Aloo scan history"
+
+[dependencies]
+aloo-core   = { workspace = true }
+aloo-traits = { workspace = true }
+sqlx        = { workspace = true }
+tokio       = { workspace = true }
+thiserror   = { workspace = true }
+tracing     = { workspace = true }
+serde_json  = { workspace = true }

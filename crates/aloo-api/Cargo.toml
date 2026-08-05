@@ -1,0 +1,16 @@
+[package]
+name         = "aloo-api"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description  = "REST/gRPC API server for the Aloo control plane"
+
+[dependencies]
+aloo-core   = { workspace = true }
+aloo-traits = { workspace = true }
+serde       = { workspace = true }
+tracing     = { workspace = true }
+thiserror   = { workspace = true }
+tokio       = { workspace = true, features = ["sync", "macros"] }

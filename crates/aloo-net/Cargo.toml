@@ -1,0 +1,23 @@
+[package]
+name         = "aloo-net"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description  = "Network socket abstractions for Aloo (stub — no live I/O yet)"
+
+[features]
+## Enable raw socket support (requires CAP_NET_RAW on Linux, admin on Windows).
+raw-sockets = []
+
+[dependencies]
+aloo-core   = { workspace = true }
+aloo-traits = { workspace = true }
+tokio       = { workspace = true }
+async-trait = { workspace = true }
+bytes       = { workspace = true }
+ipnet       = { workspace = true }
+socket2     = { workspace = true }
+thiserror   = { workspace = true }
+tracing     = { workspace = true }

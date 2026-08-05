@@ -1,0 +1,19 @@
+[package]
+name         = "aloo-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description  = "Pure domain types for the Aloo network intelligence platform"
+
+[dependencies]
+serde     = { workspace = true }
+uuid      = { workspace = true }
+chrono    = { workspace = true }
+ipnet     = { workspace = true }
+bytes     = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }

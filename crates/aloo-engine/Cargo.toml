@@ -1,0 +1,25 @@
+[package]
+name         = "aloo-engine"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description  = "Scan orchestration engine for Aloo"
+
+[dependencies]
+aloo-core        = { workspace = true }
+aloo-traits      = { workspace = true }
+aloo-config      = { workspace = true }
+aloo-net         = { workspace = true }
+aloo-discovery   = { workspace = true }
+aloo-probes      = { workspace = true }
+aloo-fingerprint = { workspace = true }
+aloo-vuln        = { workspace = true }
+tokio            = { workspace = true }
+async-trait      = { workspace = true }
+dashmap          = { workspace = true }
+thiserror        = { workspace = true }
+tracing          = { workspace = true }
+chrono           = { workspace = true }
+console          = { workspace = true }

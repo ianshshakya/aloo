@@ -1,0 +1,17 @@
+[package]
+name         = "aloo-dns"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description  = "DNS resolution subsystem for Aloo (stub — hickory-resolver pending)"
+
+[dependencies]
+aloo-core   = { workspace = true }
+aloo-traits = { workspace = true }
+tokio       = { workspace = true }
+async-trait = { workspace = true }
+dashmap     = { workspace = true }
+thiserror   = { workspace = true }
+tracing     = { workspace = true }

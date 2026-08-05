@@ -1,0 +1,103 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/aloo-core",
+    "crates/aloo-traits",
+    "crates/aloo-config",
+    "crates/aloo-engine",
+    "crates/aloo-net",
+    "crates/aloo-dns",
+    "crates/aloo-discovery",
+    "crates/aloo-probes",
+    "crates/aloo-fingerprint",
+    "crates/aloo-tls",
+    "crates/aloo-vuln",
+    "crates/aloo-storage",
+    "crates/aloo-report",
+    "crates/aloo-plugin",
+    "crates/aloo-ai",
+    "crates/aloo-assets",
+    "crates/aloo-history",
+    "crates/aloo-api",
+    "crates/aloo-cli",
+]
+
+[workspace.package]
+edition      = "2021"
+version      = "0.1.0"
+authors      = ["Aloo Contributors"]
+license      = "MIT OR Apache-2.0"
+repository   = "https://github.com/aloo-project/aloo"
+rust-version = "1.82"
+
+[workspace.dependencies]
+# ── Internal crates ──────────────────────────────────────────────────────────
+aloo-core        = { path = "crates/aloo-core" }
+aloo-traits      = { path = "crates/aloo-traits" }
+aloo-config      = { path = "crates/aloo-config" }
+aloo-engine      = { path = "crates/aloo-engine" }
+aloo-net         = { path = "crates/aloo-net" }
+aloo-dns         = { path = "crates/aloo-dns" }
+aloo-discovery   = { path = "crates/aloo-discovery" }
+aloo-probes      = { path = "crates/aloo-probes" }
+aloo-fingerprint = { path = "crates/aloo-fingerprint" }
+aloo-tls         = { path = "crates/aloo-tls" }
+aloo-vuln        = { path = "crates/aloo-vuln" }
+aloo-storage     = { path = "crates/aloo-storage" }
+aloo-report      = { path = "crates/aloo-report" }
+aloo-plugin      = { path = "crates/aloo-plugin" }
+aloo-ai          = { path = "crates/aloo-ai" }
+aloo-assets      = { path = "crates/aloo-assets" }
+aloo-history     = { path = "crates/aloo-history" }
+aloo-api         = { path = "crates/aloo-api" }
+
+# ── Async runtime ─────────────────────────────────────────────────────────────
+tokio       = { version = "1", features = ["sync", "time", "rt", "rt-multi-thread", "macros", "io-util"] }
+tokio-util  = { version = "0.7", features = ["codec"] }
+async-trait = "0.1"
+
+# ── Serialization ─────────────────────────────────────────────────────────────
+serde      = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml       = "0.8"
+
+# ── Error handling ────────────────────────────────────────────────────────────
+thiserror = "2"
+anyhow    = "1"
+
+# ── Identity / time ───────────────────────────────────────────────────────────
+uuid   = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+# ── Network types (no live networking yet) ────────────────────────────────────
+ipnet   = { version = "2", features = ["serde"] }
+socket2 = "0.5"
+bytes   = "1"
+
+# ── CLI ───────────────────────────────────────────────────────────────────────
+clap = { version = "4", features = ["derive", "env"] }
+
+# ── Observability ─────────────────────────────────────────────────────────────
+tracing            = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json", "fmt"] }
+
+# ── Concurrency ───────────────────────────────────────────────────────────────
+dashmap = "6"
+rayon   = "1"
+
+# ── Storage ───────────────────────────────────────────────────────────────────
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "sqlite", "migrate"] }
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+regex      = "1"
+minijinja  = "1"
+libloading = "0.8"
+
+# ── Terminal UI (cli only) ───────────────────────────────────────────────────
+indicatif = "0.17"
+console   = "0.15"
+
+# ── Dev / test ───────────────────────────────────────────────────────────────
+tempfile  = "3"
+mockall   = "0.13"
+criterion = { version = "0.5", features = ["html_reports"] }

@@ -1,0 +1,31 @@
+[package]
+name         = "aloo-cli"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description  = "Command-line interface for the Aloo network intelligence platform"
+
+[[bin]]
+name = "aloo"
+path = "src/main.rs"
+
+[dependencies]
+aloo-core        = { workspace = true }
+aloo-traits      = { workspace = true }
+aloo-config      = { workspace = true }
+aloo-engine      = { workspace = true }
+aloo-report      = { workspace = true }
+aloo-storage     = { workspace = true }
+aloo-plugin      = { workspace = true }
+aloo-ai          = { workspace = true }
+tokio            = { workspace = true, features = ["full"] }
+clap             = { workspace = true }
+tracing          = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow           = { workspace = true }
+chrono           = { workspace = true }
+indicatif        = { workspace = true }
+console          = { workspace = true }
+serde_json       = { workspace = true }
