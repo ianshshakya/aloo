@@ -10,7 +10,7 @@ description  = "Diff engine and asset timeline management for Aloo"
 [dependencies]
 aloo-core   = { workspace = true }
 aloo-traits = { workspace = true }
-serde       = { workspace = true }
-tracing     = { workspace = true }
+sqlx        = { workspace = true }
+tokio       = { workspace = true }
 thiserror   = { workspace = true }
 chrono      = { workspace = true }

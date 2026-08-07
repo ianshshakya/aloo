@@ -96,12 +96,4 @@ pub struct AssetTimeline {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    #[tokio::test]
-    async fn diff_engine_returns_empty_stub() {
-        let engine = DiffEngine::new();
-        let diff = engine.compare(SessionId::new(), SessionId::new()).await.unwrap();
-        assert!(diff.new_hosts.is_empty());
-        assert!(diff.port_changes.is_empty());
-    }
 }

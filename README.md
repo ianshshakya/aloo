@@ -3,7 +3,7 @@
   <p><strong>The Open Source Network Intelligence Platform</strong></p>
 
   <p>
-    <a href="https://github.com/ianshshakya/aloo/actions"><img src="https://img.shields.io/github/actions/workflow/status/ianshshakya/aloo/release.yml?branch=main&style=flat-square" alt="Build Status"></a>
+    <a href="https://github.com/ianshshakya/aloo/actions"><img src="https://img.shields.io/github/actions/workflow/status/ianshshakya/aloo/ci.yml?branch=main&style=flat-square" alt="Build Status"></a>
     <a href="https://crates.io/crates/aloo-cli"><img src="https://img.shields.io/crates/v/aloo-cli?style=flat-square" alt="Crates.io"></a>
     <a href="https://github.com/ianshshakya/aloo/blob/main/LICENSE-MIT"><img src="https://img.shields.io/badge/license-MIT%2FApache--2.0-blue?style=flat-square" alt="License"></a>
     <a href="https://rust-lang.org"><img src="https://img.shields.io/badge/rust-1.82+-orange.svg?style=flat-square" alt="Rust 1.82+"></a>
