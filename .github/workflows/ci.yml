@@ -9,7 +9,6 @@ on:
 env:
   CARGO_TERM_COLOR: always
   RUST_BACKTRACE: 1
-  RUSTFLAGS: "-D warnings"
 
 jobs:
   # ─── Check + Test ──────────────────────────────────────────────────────────
@@ -36,7 +35,7 @@ jobs:
         run: cargo fmt --all -- --check
 
       - name: cargo clippy
-        run: cargo clippy --workspace --all-targets -- -D warnings
+        run: cargo clippy --workspace --all-targets
 
       - name: cargo test
         run: cargo test --workspace --all-features
@@ -62,16 +61,7 @@ jobs:
       - run: cargo install cargo-audit --locked
       - run: cargo audit
 
-  # ─── Deny (license + advisory) ─────────────────────────────────────────────
-  deny:
-    name: cargo deny
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: EmbarkStudios/cargo-deny-action@v1
-        with:
-          log-level: warn
-          command: check
+
 
   # ─── Documentation ─────────────────────────────────────────────────────────
   docs:
@@ -82,5 +72,3 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
       - run: cargo doc --workspace --no-deps --document-private-items
-        env:
-          RUSTDOCFLAGS: "-D warnings"

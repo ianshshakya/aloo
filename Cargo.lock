@@ -167,9 +167,11 @@ dependencies = [
  "aloo-core",
  "aloo-traits",
  "chrono",
+ "serde",
  "sqlx",
  "thiserror",
  "tokio",
+ "tracing",
 ]
 
 [[package]]
