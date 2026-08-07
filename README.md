@@ -12,7 +12,12 @@
 
 ---
 
-> **Aloo is currently in heavy development (Phase 1).** The network scanning engine is being built. See the [Roadmap](#roadmap) for status.
+> **Aloo is currently in active development.** The v0.1.0 network scanning engine is complete. See the [Roadmap](#roadmap) for upcoming SQLite history and vulnerability mapping features!
+
+<div align="center">
+  <!-- TODO: Replace with the GIF of the beautiful CLI scanning -->
+  <img src="docs/demo.gif" alt="Aloo CLI Demo">
+</div>
 
 ## 🌍 Overview
 
@@ -36,33 +41,35 @@ Built in 100% safe **Rust**, Aloo combines the raw speed of Masscan/ZMap with th
 
 ## 🚀 Quickstart
 
-### Prerequisites
+### Installation
 
 Aloo requires **Rust 1.82+**. 
-*If you are on Windows, we highly recommend running Aloo inside **WSL2 (Ubuntu)** for accurate raw socket access and performance.*
+Install it globally on your machine using Cargo:
 
 ```bash
-# Clone the repository
-git clone https://github.com/aloo-project/aloo.git
-cd aloo
+cargo install aloo-cli
+```
 
-# Build the CLI
-cargo build --release -p aloo-cli
+### Run a Scan
 
-# Run your first scan (Requires root/sudo for raw packets)
-sudo ./target/release/aloo scan 192.168.1.0/24
+```bash
+# Run a blazing fast scan against the top 1024 ports
+aloo scan --profile quick scanme.nmap.org
+
+# Scan an entire local subnet with rate limits
+aloo scan -r 5000 -j 2000 192.168.1.0/24
 ```
 
 ## 🏗️ Architecture
 
-Aloo is a highly concurrent, event-driven system built on `tokio` and `sqlx`. It uses a **Hexagonal Architecture** across a 16+ crate workspace to ensure every component (scanning, storage, diffing, AI generation) is modular and independently testable.
+Aloo is a highly concurrent, event-driven system built on `tokio` and `sqlx`. It uses a **Hexagonal Architecture** across a 19-crate workspace to ensure every component (scanning, storage, diffing, AI generation) is modular and independently testable.
 
 Read our full [Architecture Blueprint](docs/ARCHITECTURE.md) to see how the Engine, Event Bus, and SQLite WAL storage fit together.
 
 ## 🗺️ Roadmap
 
 - [x] **Phase 1: The Foundation** - Workspace, Domain models, Storage interfaces.
-- [ ] **Phase 2: The Network Engine** - AF_PACKET/Raw sockets, TCP/UDP connect, SYN scanner, Global rate limiter.
+- [x] **Phase 2: The Network Engine** - Tokio JoinSet concurrency, DNS resolution, TCP connect scanning, Global rate limiter.
 - [ ] **Phase 3: The Intelligence Engine** - Banner grabbing, TLS inspection, CVE mapping.
 - [ ] **Phase 4: The Time Machine** - SQLite schema, Diff Engine, Asset Timeline.
 - [ ] **Phase 5: The Enterprise Layer** - Infrastructure Graph, AI Extension points, REST API, Plugins.
