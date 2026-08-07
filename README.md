@@ -15,8 +15,7 @@
 > **Aloo is currently in active development.** The v0.1.0 network scanning engine is complete. See the [Roadmap](#roadmap) for upcoming SQLite history and vulnerability mapping features!
 
 <div align="center">
-  <!-- TODO: Replace with the GIF of the beautiful CLI scanning -->
-  <img src="docs/demo.gif" alt="Aloo CLI Demo">
+  <img src="https://github.com/user-attachments/assets/5e1f5caf-5b35-4fee-a938-b3c21f484971" alt="Aloo CLI Demo">
 </div>
 
 ## 🌍 Overview
