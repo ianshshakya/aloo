@@ -359,7 +359,7 @@ fn print_version() {
         style("aloo").cyan().bold(),
         style(env!("CARGO_PKG_VERSION")).yellow(),
         style("The next-generation network intelligence platform.").dim(),
-        style("https://github.com/aloo-project/aloo").dim(),
+        style("https://github.com/ianshshakya/aloo").dim(),
     );
 }
 

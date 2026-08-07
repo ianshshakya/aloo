@@ -27,7 +27,7 @@ edition      = "2021"
 version      = "0.1.0"
 authors      = ["Aloo Contributors"]
 license      = "MIT OR Apache-2.0"
-repository   = "https://github.com/aloo-project/aloo"
+repository   = "https://github.com/ianshshakya/aloo"
 rust-version = "1.82"
 
 [workspace.dependencies]
